@@ -1,0 +1,161 @@
+#__next {
+  height: 100%;
+}
+
+.sidebar {
+  background-color: @primary;
+  color: #fff;
+
+  .ant-divider {
+    border-color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 12px;
+    margin-top: 12px;
+  }
+
+  svg {
+    // font-size: 24px;
+  }
+  .menu-section {
+    .menu-section-label {
+      color: #fff;
+    }
+
+    svg {
+      color: #fff;
+    }
+  }
+  .ant-menu {
+    // padding-left: 12px;
+    // padding-right: 12px;
+    background-color: @primary;
+    border-right: 0px;
+
+    li.ant-menu-item {
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      // border-radius: 8px;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      border-radius: 8px;
+      &:hover {
+        background: #ebe0c733;
+      }
+
+      &::after {
+        border-right: 0px;
+      }
+
+      .menu-link-wrapper {
+        .anticon {
+          // margin-right: 8px;
+          color: #fff;
+        }
+        span {
+          // padding-left: 8px;
+          color: #fff;
+        }
+
+        svg {
+          color: #fff;
+        }
+      }
+
+      &.ant-menu-item-selected {
+        background: #ebe0c733;
+
+        .menu-link-wrapper {
+          svg {
+            color: #FFF;
+          }
+          span {
+            color: #fff;
+            font-weight: 700;
+          }
+        }
+      }
+    }
+
+    .ant-menu-submenu-title {
+      padding-left: 10px !important;
+    }
+  }
+}
+
+.site-layout {
+  background-color: #f8f8f8;
+}
+
+.navbar {
+  // position: fixed;
+  z-index: 1;
+  // width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  height: 60px;
+  padding: 0px 36px;
+}
+
+.tab-layout {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  .ant-menu-item-selected {
+    a {
+      font-weight: 700;
+    }
+  }
+}
+
+// --------- Typography ---------
+// >>> Headers
+* {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 800;
+  margin-block-end: 0;
+}
+h3 {
+  font-size: 20px;
+}
+h4 {
+  margin-block-end: 0;
+  margin-block-start: 0;
+}
+
+p {
+  margin-block-end: 0px;
+  margin-block-start: 0px;
+}
+
+.scrollbar {
+  overflow-y: scroll;
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    border-radius: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #969696;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    border-radius: 10px;
+  }
+}

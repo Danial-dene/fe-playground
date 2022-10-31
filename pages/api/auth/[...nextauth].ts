@@ -1,9 +1,9 @@
-import { apiCaller } from "@utils/axios";
 import axios from "axios";
 import _ from "lodash";
 import NextAuth, { User } from "next-auth";
 import { JWT } from "next-auth/jwt";
 import CredentialsProvider from "next-auth/providers/credentials";
+import { apiCaller } from "../../../src/utils/axios";
 
 export default NextAuth({
   providers: [
@@ -12,7 +12,7 @@ export default NextAuth({
       name: "Credentials",
       // The credentials property is used to generate a suitable form on the sign in page.
       credentials: {
-        email: { label: "Email", type: "text", placeholder: "jsmith" },
+        username: { label: "Username", type: "text", placeholder: "jsmith" },
         password: { label: "Password", type: "password" },
       },
 
@@ -24,14 +24,14 @@ export default NextAuth({
             return { refreshToken, accessToken };
           }
 
-          const res = await axios({
+          const res = await axios  ({
             method: "post",
-            url: `${process.env.NEXT_AUTH_PUBLIC_API_URL}/api/auth/admin/sign-in`,
+            url: `${process.env.NEXT_AUTH_PUBLIC_API_URL}/api/auth/login`,
             headers: {
               "Content-Type": "application/json",
             },
             data: {
-              email: credentials?.email,
+              username: credentials?.username,
               password: credentials?.password,
             },
           });
@@ -50,6 +50,7 @@ export default NextAuth({
   callbacks: {
     //if true
     async signIn({ user }) {
+      console.log("user", user);
       let token: any = null;
       if (token) {
         user.accessToken = token.accessToken;

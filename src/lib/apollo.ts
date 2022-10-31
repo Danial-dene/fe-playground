@@ -6,7 +6,6 @@ import {
 } from "@apollo/client";
 import { createUploadLink } from "apollo-upload-client";
 import { setContext } from "@apollo/client/link/context";
-import * as App from "@utils/app.utils";
 import { getSession } from "next-auth/react";
 
 const uploadLink = createUploadLink({

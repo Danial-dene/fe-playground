@@ -2,7 +2,7 @@ import { Layout } from "antd";
 import { signOut, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
-import { UserAuthService } from "src/api";
+
 import NavBar from "./NavBar";
 import SideBar from "./SideBar";
 

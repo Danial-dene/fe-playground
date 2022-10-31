@@ -1,6 +1,7 @@
 import {
   Button,
   Card,
+  Col,
   Form,
   FormInstance,
   Input,
@@ -15,35 +16,36 @@ import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 // import styles from "../styles/Home.module.css";
 // import "../styles/index.scss";
+
 type FormValues = {
-  email: string;
+  username: string;
   password: string;
 };
 
 const LoginPage: NextPage = () => {
-  const router =useRouter()
+  const router = useRouter();
   const formRef = useRef<FormInstance>(null);
   const [isSubmitting, setSubmitting] = useState(false);
-  const { status } = useSession();
+  const { status, data } = useSession();
   console.log("status", status);
+  console.log("data", data);
   if (status === "authenticated") {
     router.push("/");
   }
-
 
   const onFinish = async (values: FormValues) => {
     setSubmitting(true);
 
     try {
       //@ts-ignore
-      const { error } = await signIn("credentials", {
+      const res = await signIn("credentials", {
         redirect: false,
-        email: values.email,
+        username: values.username,
         password: values.password,
         callbackUrl: "/",
       });
-
-      if (error) message.error("Invalid email and password");
+      console.log("res", res);
+      if (res.error) message.error("Invalid email and password");
     } catch (e) {
       throw e;
     } finally {
@@ -51,49 +53,48 @@ const LoginPage: NextPage = () => {
     }
   };
   return (
-    <>
+    <div className=" grid h-full  bg-[#0b4150] justify-center items-center ">
+      {" "}
       <Head>
         <title>FE Playground Login</title>
       </Head>
-      <div className="login-container bg-[#0b4150] ">
-        <div className="login-content px-4">
-          <Card bordered={false} className=" rounded ">
-            <div>
-              <div className="flex justify-center items-center px-20 ">
-                <Image
-                  src="/images/logo.png"
-                  height={150}
-                  width={150}
-                  layout="fixed"
-                  objectFit="contain"
-                  draggable={false}
-                  contentEditable={false}
-                  quality={50}
-                  priority
-                  alt=""
-                  className="rounded-full"
-                />
-              </div>
-              <Typography.Title
-                level={4}
-                className="text-center py-4 font-medium text-primary"
-              >
-                FE Playground
-              </Typography.Title>
+      <div className=" px-4">
+        <Card bordered={false} className=" bg- rounded-xl m-20   ">
+          <div>
+            <div className="flex justify-center items-center px-20 ">
+              <Image
+                src="/images/logo.png"
+                height={150}
+                width={150}
+                layout="fixed"
+                objectFit="contain"
+                draggable={false}
+                contentEditable={false}
+                quality={50}
+                priority
+                alt=""
+                className="rounded-full"
+              />
+            </div>
+            <Typography.Title
+              level={4}
+              className="text-center py-4 font-medium text-white"
+            >
+              FE Playground
+            </Typography.Title>
 
-              <Form
-                ref={formRef}
-                className="flex flex-col gap-4"
-                onFinish={onFinish}
-              >
-                <Form.Item name="email">
-                  <Input placeholder="E-mail" />
-                </Form.Item>
+            <Form
+              ref={formRef}
+              className="flex flex-col gap-4 "
+              onFinish={onFinish}
+            >
+              <Form.Item name="username" rules={[{ required: true }]}>
+                <Input placeholder="E-mail" />
+              </Form.Item>
 
-                <Form.Item name="password">
-                  <Input.Password placeholder="Password" />
-                </Form.Item>
-              </Form>
+              <Form.Item name="password" rules={[{ required: true }]}>
+                <Input.Password placeholder="Password" />
+              </Form.Item>
 
               <Button
                 loading={isSubmitting}
@@ -105,11 +106,11 @@ const LoginPage: NextPage = () => {
               >
                 Login
               </Button>
-            </div>
-          </Card>
-        </div>
+            </Form>
+          </div>
+        </Card>
       </div>
-    </>
+    </div>
   );
 };
 

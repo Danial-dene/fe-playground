@@ -1,0 +1,142 @@
+@import "~@trendmicro/react-buttons/dist/react-buttons.css";
+@import "~@trendmicro/react-dropdown/dist/react-dropdown.css";
+@import "~antd/dist/antd.css";
+@import "~react-quill/dist/quill.snow.css";
+@import "~antd/lib/style/themes/default.less";
+@import "~antd/es/slider/style";
+@import "~antd/es/modal/style";
+// @import "~antd/dist/antd.css";
+@import "./colors.less";
+
+// @theme: default;
+
+// The prefix to use on all css classes from ant.
+@ant-prefix: ant;
+
+// An override for the html selector for theme prefixes
+@html-selector: html;
+
+// -------- Colors -----------
+// >>> Primary
+@primary-color: @primary;
+
+// >>> Success
+@success-color: #5bba5f;
+
+// Base Scaffolding Variables
+// ---
+
+// Background color for `<body>`
+@body-background: #eceef0;
+// Base background color for most components
+@component-background: #fff;
+// Popover background color
+@font-family: Inter, Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+  "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@code-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier,
+  monospace;
+// @text-color: fade(@black, 85%);
+// @text-color-secondary: fade(@black, 45%);
+// @text-color-inverse: @white;
+// @icon-color: inherit;
+// @icon-color-hover: fade(@black, 75%);
+// @heading-color: fade(@black, 85%);
+// @text-color-dark: fade(@white, 85%);
+// @text-color-secondary-dark: fade(@white, 65%);
+// @text-selection-bg: @primary-color;
+// @font-variant-base: tabular-nums;
+// @font-feature-settings-base: 'tnum';
+// @font-size-base: 14px;
+// @font-size-lg: @font-size-base + 2px;
+// @font-size-sm: 12px;
+// @heading-1-size: ceil(@font-size-base * 2.71);
+// @heading-2-size: ceil(@font-size-base * 2.14);
+// @heading-3-size: ceil(@font-size-base * 1.71);
+// @heading-4-size: ceil(@font-size-base * 1.42);
+// @heading-5-size: ceil(@font-size-base * 1.14);
+// https://github.com/ant-design/ant-design/issues/20210
+// @line-height-base: 1.5715;
+@border-radius-base: 8px;
+@border-radius-sm: @border-radius-base;
+
+// height rules
+@height-base: 40px;
+@height-lg: 48px;
+@height-sm: 24px;
+
+// Buttons
+@btn-font-weight: 600;
+@btn-border-radius-base: @border-radius-base;
+@btn-border-radius-sm: @border-radius-base;
+@btn-border-width: @border-width-base;
+@btn-border-style: @border-style-base;
+@btn-shadow: 0 2px 0 rgba(0, 0, 0, 0.015);
+@btn-primary-shadow: 0 2px 0 rgba(0, 0, 0, 0.045);
+@btn-text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.12);
+//primary button
+@btn-primary-color: #fff;
+@btn-primary-bg: @primary-color;
+//default button
+@btn-default-color: @primary-color;
+@btn-default-bg: #fff;
+@btn-default-border: @border-color-base;
+@btn-default-height: @height-base;
+
+//Cards
+@card-border-radius: 16px;
+
+//Lists
+@list-item-meta-description-font-color: #1c1c1c;
+
+// Input
+// ---
+@input-height-base: @height-base;
+// @input-height-lg: @height-lg;
+// @input-height-sm: @height-sm;
+// @input-padding-horizontal: @control-padding-horizontal - 1px;
+// @input-padding-horizontal-base: @input-padding-horizontal;
+// @input-padding-horizontal-sm: @control-padding-horizontal-sm - 1px;
+// @input-padding-horizontal-lg: @input-padding-horizontal;
+// @input-padding-vertical-base: max(
+//   (round(((@input-height-base - @font-size-base * @line-height-base) / 2) * 10) / 10) -
+//     @border-width-base,
+//   3px
+// );
+// @input-padding-vertical-sm: max(
+//   (round(((@input-height-sm - @font-size-base * @line-height-base) / 2) * 10) / 10) -
+//     @border-width-base,
+//   0
+// );
+// @input-padding-vertical-lg: (
+//     ceil(((@input-height-lg - @font-size-lg * @line-height-base) / 2) * 10) / 10
+//   ) - @border-width-base;
+@input-placeholder-color: hsv(0, 0, 75%);
+@input-color: @text-color;
+@input-icon-color: @input-color;
+@input-border-color: @border-color-base;
+@input-bg: @component-background;
+@input-number-hover-border-color: @input-hover-border-color;
+@input-number-handler-active-bg: #f4f4f4;
+@input-number-handler-hover-bg: @primary-5;
+@input-number-handler-bg: @component-background;
+@input-number-handler-border-color: @border-color-base;
+@input-addon-bg: @background-color-light;
+@input-hover-border-color: @primary-5;
+@input-disabled-bg: @disabled-bg;
+@input-outline-offset: 0 0;
+@input-icon-hover-color: fade(@black, 85%);
+@input-disabled-color: @disabled-color;
+
+// Typography
+// ---
+@typography-title-font-weight: 600;
+@typography-title-margin-top: 1.2em;
+@typography-title-margin-bottom: 0px;
+
+// Avatar
+@avatar-bg: #e8efff;
+@avatar-color: #2a64f9;
+@avatar-size-lg: 48px;
+
+// Switch
+@switch-color: @success-color;

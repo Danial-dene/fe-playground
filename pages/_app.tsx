@@ -1,13 +1,15 @@
-// import "@styles/variables.less";
 import { ApolloProvider } from "@apollo/client";
 import { Layout } from "antd";
-import apolloClient from "src/lib/apollo";
-// import "@styles/global.css";
+
+import "../src/styles/global.css";
 import { SessionProvider } from "next-auth/react";
 import type { AppProps } from "next/app";
 import React, { useState } from "react";
-
+import "antd/dist/antd.css";
 import "src/utils/axios";
+import AppLayout from "../src/components/AppLayout";
+import HeaderProvider from "../src/components/HeaderProvider";
+import apolloClient from "../src/lib/apollo";
 // require("@styles/global.less");
 
 interface Props extends AppProps {
