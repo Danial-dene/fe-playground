@@ -30,7 +30,8 @@ const LoginPage: NextPage = () => {
   console.log("status", status);
   console.log("data", data);
   if (status === "authenticated") {
-    router.push("/");
+    router.push("/dashboard");
+    console.log("hello");
   }
 
   const onFinish = async (values: FormValues) => {
@@ -44,7 +45,7 @@ const LoginPage: NextPage = () => {
         password: values.password,
         callbackUrl: "/",
       });
-      console.log("res", res);
+
       if (res.error) message.error("Invalid email and password");
     } catch (e) {
       throw e;

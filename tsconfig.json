@@ -13,7 +13,70 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "incremental": true
+    "incremental": true,
+    "baseUrl": ".",
+    "paths": {
+      "@assets": [
+        "src/assets"
+      ],
+      "@assets/*": [
+        "src/assets/*"
+      ],
+      "@commons": [
+        "src/commons"
+      ],
+      "@commons/*": [
+        "src/commons/*"
+      ],
+      "@components": [
+        "src/components"
+      ],
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@constants": [
+        "src/constants"
+      ],
+      "@constants/*": [
+        "src/constants/*"
+      ],
+      "@forms": [
+        "src/forms"
+      ],
+      "@forms/*": [
+        "src/forms/*"
+      ],
+      "@styles": [
+        "src/styles"
+      ],
+      "@styles/*": [
+        "src/styles/*"
+      ],
+      "@utils": [
+        "src/utils"
+      ],
+      "@utils/*": [
+        "src/utils/*"
+      ],
+      "@graphql": [
+        "src/graphql"
+      ],
+      "@graphql/*": [
+        "src/graphql/*"
+      ],
+      "@lib": [
+        "src/lib"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@types": [
+        "src/types"
+      ],
+      "@types/*": [
+        "src/types/*"
+      ]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

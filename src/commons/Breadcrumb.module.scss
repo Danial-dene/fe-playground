@@ -1,0 +1,35 @@
+.antdBreadcrumb :global {
+  ol {
+    li {
+      display: flex;
+      align-items: center;
+      margin-left: 0px;
+      font-size: 16px;
+
+      .close-item {
+        display: flex;
+        align-items: center;
+        margin-right: 20px;
+        cursor: pointer;
+
+        svg {
+          font-size: 22px;
+        }
+      }
+      
+      // .breadcrumb-item {
+      //   svg {
+      //     font-size: 12px;
+      //   }
+      // }
+    }
+
+    .ant-breadcrumb-separator {
+      display: flex;
+      align-items: center;
+      svg {
+        vertical-align: middle;
+      }
+    }
+  }
+}

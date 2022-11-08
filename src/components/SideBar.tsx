@@ -12,12 +12,9 @@ import {
   PoweroffOutlined,
   SettingOutlined,
   UserOutlined,
-  TeamOutlined,
 } from "@ant-design/icons";
-import Head from "next/head";
-import { Icon } from "./commons";
-
-
+import { Icon } from "../commons/Icon";
+console.log("Icon", typeof Icon);
 const { Sider } = Layout;
 
 type MenuItemProps = {
@@ -50,16 +47,10 @@ const items: MenuItemProps[] = [
     label: "Projects",
     items: [
       {
-        label: "Admins",
-        key: "admins",
-        to: "/admins",
-        icon: UserOutlined,
-      },
-      {
         label: "Customers",
         key: "customers",
         to: "/customers",
-        icon: TeamOutlined,
+        icon: UserOutlined,
       },
     ],
   },
@@ -123,9 +114,6 @@ const SideBar = () => {
       theme="light"
     >
       <div className="flex flex-col h-screen">
-        <Head>
-          <title>{APP_NAME}</title>
-        </Head>
         <div className="sticky top-0 z-50">
           <div
             className={`flex flex-row px-4 py-2 items-center ${

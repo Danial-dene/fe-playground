@@ -24,7 +24,7 @@ export default NextAuth({
             return { refreshToken, accessToken };
           }
 
-          const res = await axios  ({
+          const res = await axios({
             method: "post",
             url: `${process.env.NEXT_AUTH_PUBLIC_API_URL}/api/auth/login`,
             headers: {
@@ -36,12 +36,17 @@ export default NextAuth({
             },
           });
 
-          if (res.data.accessToken) {
+          // console.log("res", res.data);
+
+          // console.log("res", res);
+
+          if (res.data.at) {
             return res.data;
           } else {
             return null;
           }
         } catch (e: any) {
+          console.log("e", e);
           throw new Error("There was an error on admin authentication");
         }
       },
@@ -65,9 +70,9 @@ export default NextAuth({
 
       if (user) {
         // This will only be executed at login. Each next invocation will skip this part.
-        token.accessToken = user.accessToken;
+        token.accessToken = user.at;
         // token.accessTokenExpiry = user.accessTokenExpiry;
-        token.refreshToken = user.refreshToken;
+        token.refreshToken = user.at;
       }
 
       // If accessTokenExpiry is 24 hours, we have to refresh token before 24 hours pass.
@@ -87,7 +92,7 @@ export default NextAuth({
     },
     session: async ({ session, token }) => {
       // Here we pass accessToken to the client to be used in authentication with your API
-      session.accessToken = token.accessToken;
+      session.at = token.at;
 
       apiCaller.defaults.headers.common = {
         Authorization: `Bearer ${token.accessToken}`,
@@ -112,15 +117,15 @@ const refreshAccessToken = async (tokenObject: JWT) => {
     const tokenResponse = await apiCaller.post(
       `${process.env.NEXTAUTH_URL}/api/auth/admin/revoke-authentication`,
       {
-        refreshToken: tokenObject.refreshToken,
+        refreshToken: tokenObject.rt,
       }
     );
 
     return {
       ...tokenObject,
-      accessToken: tokenResponse.data.accessToken,
+      accessToken: tokenResponse.data.at,
       // accessTokenExpiry: tokenResponse.data.accessTokenExpiry,
-      refreshToken: tokenResponse.data.refreshToken,
+      refreshToken: tokenResponse.data.rt,
     };
   } catch (error) {
     return {

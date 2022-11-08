@@ -1,0 +1,43 @@
+.CommonTableView :global {
+  .btn-filter {
+    margin-right: 8px;
+    border-radius: 100px;
+    padding-left: 12px;
+    padding-right: 12px;
+    color: #4d4d4d;
+    border-width: 0px;
+    svg {
+      margin-right: 5px;
+      vertical-align: middle;
+      margin-top: -4px;
+    }
+    .filter-indicator {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background-color: #308b34;
+      display: inline-block;
+      position: absolute;
+      left: 10px;
+      top: 4px;
+    }
+  }
+  .filter-form {
+    .filter-form-header {
+      padding: 9px 16px;
+      background-color: #f9f8f6;
+      .btn-apply, .btn-reset {
+        height: auto;
+        padding: 0px;
+      }
+      .btn-reset {
+        margin-right: 5px;
+        color: gray;
+        font-weight: normal;
+      }
+    }
+    .ant-collapse-borderless {
+      background-color: #fff;
+    }
+  }
+}

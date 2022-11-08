@@ -1,21 +1,21 @@
 import React from "react";
 import _ from "lodash";
-import { ICONS } from "../../constants";
-
+import { ICONS, IconNames } from "../constants";
 
 interface IconProps {
-  name: string;
+  name: IconNames;
   width?: number;
   height?: number;
   fill?: string;
 }
-const Icon = (props: IconProps) => {
+export const Icon = (props: IconProps) => {
   const hasIcon = _.find(ICONS, { name: props.name });
   if (hasIcon) {
     const Comp = hasIcon.component;
+
+    console.log("i", Comp);
+
     return <Comp {...props} />;
   }
   return null;
 };
-
-export { Icon };

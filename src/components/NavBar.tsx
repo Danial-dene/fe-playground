@@ -1,7 +1,8 @@
-import { Col, Dropdown, Layout, Menu, Row, Space, Typography } from "antd";
+import { Col, Layout, Row, Typography } from "antd";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import React from "react";
+
 import { useHeader } from "./HeaderProvider";
 
 const { Header } = Layout;

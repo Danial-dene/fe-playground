@@ -19,32 +19,43 @@ import Search from "../../public/assets/icons/search.svg";
 import Settings from "../../public/assets/icons/settings.svg";
 import User from "../../public/assets/icons/user.svg";
 import Users from "../../public/assets/icons/users.svg";
+import {
+  DownOutlined,
+  CalendarOutlined,
+  CameraOutlined,
+  RightOutlined,
+  UpOutlined,
+  CloseOutlined,
+  ContactsOutlined,
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+} from "@ant-design/icons";
 type IconProps = {
   name: string;
   component: any;
 };
 const ICONS: IconProps[] = [
-  { name: "calendar", component: Calendar },
-  { name: "camera", component: Camera },
-  { name: "chevron-down", component: ChevronDown },
-  { name: "chevron-right", component: ChevronRight },
-  { name: "chevron-up", component: ChevronUp },
-  { name: "close", component: Close },
-  { name: "contacts", component: Contacts },
-  { name: "dashboard", component: Dashboard },
-  { name: "dots", component: Dots },
-  { name: "filter", component: Filter },
-  { name: "logout", component: Logout },
-  { name: "mail", component: Mail },
-  { name: "menu-close", component: MenuClose },
-  { name: "menu-open", component: MenuOpen },
-  { name: "pen", component: Pen },
-  { name: "plus", component: Plus },
-  { name: "project", component: Project },
-  { name: "search", component: Search },
-  { name: "settings", component: Settings },
-  { name: "user", component: User },
-  { name: "users", component: Users },
+  { name: "calendar", component: CalendarOutlined },
+  { name: "camera", component: CameraOutlined },
+  { name: "chevron-down", component: DownOutlined },
+  { name: "chevron-right", component: RightOutlined },
+  { name: "chevron-up", component: UpOutlined },
+  { name: "close", component: CloseOutlined },
+  { name: "contacts", component: ContactsOutlined },
+  { name: "dashboard", component: DownOutlined },
+  { name: "dots", component: DownOutlined },
+  { name: "filter", component: DownOutlined },
+  { name: "logout", component: DownOutlined },
+  { name: "mail", component: DownOutlined },
+  { name: "menu-close", component: MenuFoldOutlined },
+  { name: "menu-open", component: MenuUnfoldOutlined },
+  { name: "pen", component: DownOutlined },
+  { name: "plus", component: DownOutlined },
+  { name: "project", component: DownOutlined },
+  { name: "search", component: DownOutlined },
+  { name: "settings", component: DownOutlined },
+  { name: "user", component: DownOutlined },
+  { name: "users", component: DownOutlined },
 ];
 
 export type IconNames =

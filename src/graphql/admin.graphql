@@ -1,0 +1,43 @@
+fragment AdminFields on UserEdge {
+  username
+  password
+}
+
+query getUsers(
+  $paging: OffsetPaging
+  $filter: UserFilter
+  $sorting: [UserSort!]
+) {
+  users(paging: $paging, filter: $filter, sorting: $sorting) {
+    totalCount
+    edges {
+      node {
+        ...AdminFields
+      }
+    }
+  }
+}
+
+# query getOneAdmin($id: ID!) {
+#   admin(id: $id) {
+#     ...AdminFields
+#   }
+# }
+
+# mutation createAdmin($input: CreateOneAdminInput!) {
+#   createOneAdmin(input: $input) {
+#     id
+#   }
+# }
+
+# mutation updateAdmin($input: UpdateOneAdminInput!) {
+#   updateOneAdmin(input: $input) {
+#     id
+#   }
+# }
+
+# mutation deleteAdmin($input: DeleteOneAdminInput!) {
+#   deleteOneAdmin(input: $input) {
+#     id
+#   }
+# }
